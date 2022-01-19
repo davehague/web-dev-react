@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { CardList } from "./components/card-list/card-list.component";
 import "./App.css";
 
 class App extends Component {
@@ -19,14 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.monsters.map(
-          // Need to provide a key, so react knows what to update if one of our elements changes
-          // and it doesn't need to re-render what hasn't changed
-          // Dev console will yell if you don't provide a key
-          (monster) => (
-            <h1 key={monster.id}>{monster.name}</h1>
-          )
-        )}
+        <CardList monsters={this.state.monsters} />
       </div>
     );
   }
